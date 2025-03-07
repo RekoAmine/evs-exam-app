@@ -7,7 +7,7 @@ import { Exam } from '../models/exam';
   providedIn: 'root',
 })
 export class ExamService {
-  private apiUrl = 'http://localhost:3000/api/exams';
+  private apiUrl = 'http://backend:3000/api/exams';
 
   constructor(private http: HttpClient) {}
 
