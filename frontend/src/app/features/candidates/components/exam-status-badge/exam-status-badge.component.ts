@@ -2,12 +2,12 @@ import { Component, computed, Input, signal } from '@angular/core';
 import {CommonModule} from "@angular/common";
 
 @Component({
-  selector: 'app-status-badge',
+  selector: 'app-exam-status-badge',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './status-badge.component.html',
+  templateUrl: './exam-status-badge.component.html',
 })
-export class ExmStatusBadgeComponent {
+export class ExamStatusBadgeComponent {
 
   private _status = signal<string>('A organiser');
 
