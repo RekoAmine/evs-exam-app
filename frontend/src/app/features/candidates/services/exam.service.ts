@@ -6,7 +6,6 @@ import { Exam } from '../models/exam';
 @Injectable({
   providedIn: 'root',
 })
-
 export class ExamService {
   private apiUrl = 'http://localhost:3000/api/exams';
 
