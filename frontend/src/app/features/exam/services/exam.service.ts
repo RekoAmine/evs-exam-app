@@ -1,9 +1,9 @@
 import { Injectable, signal } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Exam } from '../models/exam';
 import { environment } from '../../../../environments/environment';
 import { tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root',
