@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import {ExamFormComponent} from "./features/candidates/components/exam-form/exam-form.component";
-import {ExamListComponent} from "./features/candidates/components/exam-list/exam-list-component";
+import {ExamFormPage} from "./features/exam/pages/exam-form/exam-form.page";
+import {ExamListPage} from "./features/exam/pages/exam-list/exam-list.page";
 
 export const routes: Routes = [
-  { path: '', component: ExamListComponent },
-  { path: 'add-exam', component: ExamFormComponent },
+  { path: '', component: ExamListPage },
+  { path: 'add-exam', component: ExamFormPage },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

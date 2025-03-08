@@ -1,0 +1,70 @@
+<div class="p-20 max-w-2xl mx-auto bg-white rounded-lg">
+
+  <p class="text-gray-500 text-center text-2xl mb-4 text-left font-semibold">Ajouter un examen</p>
+
+  <form [formGroup]="examForm" (ngSubmit)="onSubmit()" class="space-y-4">
+
+    <!-- Nom et Prénom -->
+    <div class="flex gap-4">
+      <div class="flex-1">
+        <label class="block font-medium">Prénom du candidat<span class="text-red-500">*</span></label>
+        <input type="text" formControlName="first_name" class="w-full px-3 py-2 border rounded-lg"
+               [class.border-red-500]="firstNameField?.invalid && firstNameField?.touched">
+
+        @if (firstNameField?.invalid && firstNameField?.touched) {
+        <p class="text-red-500 text-sm">Le prénom est requis.</p>
+        }
+      </div>
+
+      <div class="flex-1">
+        <label class="block font-medium">Nom du candidat<span class="text-red-500">*</span></label>
+        <input type="text" formControlName="last_name" class="w-full px-3 py-2 border rounded-lg"
+               [class.border-red-500]="lastNameField?.invalid && lastNameField?.touched">
+
+        @if (lastNameField?.invalid && lastNameField?.touched) {
+        <p class="text-red-500 text-sm">Le nom est requis.</p>
+        }
+      </div>
+    </div>
+
+    <!-- Lieu de rencontre -->
+    <div>
+      <label class="block font-medium">Lieu de rencontre</label>
+      <input type="text" formControlName="meeting_point" class="w-full px-3 py-2 border rounded-lg">
+    </div>
+
+    <!-- Date -->
+    <div>
+      <label class="block font-medium">Date de l'examen</label>
+      <input type="datetime-local" formControlName="date" class="w-full px-3 py-2 border rounded-lg"
+             [class.border-red-500]="dateField?.invalid && dateField?.touched">
+
+      @if (dateField?.invalid && dateField?.touched) {
+      <p class="text-red-500 text-sm">Veuillez entrer une date valide.</p>
+      }
+    </div>
+
+    <!-- Statut -->
+    <div>
+      <label class="block font-medium">Statut de l'examen</label>
+      <select formControlName="status" class="w-full px-3 py-2 border rounded-lg">
+        @for (status of statusOptions; track status) {
+        <option [value]="status">{{ status }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="flex gap-4">
+      <!-- Bouton Ajouter -->
+      <button type="submit" class="bg-orange-600 text-white px-4 py-2 rounded-lg flex-1">
+        Ajouter l'examen
+      </button>
+      <!-- Bouton Retour -->
+      <button (click)="navigateToExamList()" type="button" class="bg-gray-500 text-white px-4 py-2 rounded-lg flex-2">
+        Retour à la liste
+      </button>
+    </div>
+
+  </form>
+
+</div>

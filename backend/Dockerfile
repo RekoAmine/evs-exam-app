@@ -1,3 +1,4 @@
+#Configuration et exécution de l'application Node.js
 FROM node:18
 
 WORKDIR /app

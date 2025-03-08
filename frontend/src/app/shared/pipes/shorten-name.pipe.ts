@@ -16,10 +16,11 @@ export class ShortenNamePipe implements PipeTransform {
 
     //Garder le premier prénom
     const firstNameShort = firstName.split(' ')[0];
+    const formattedFirstName = firstNameShort.charAt(0).toUpperCase() + firstNameShort.slice(1).toLowerCase();
 
     //Prendre la première lettre du nom et la mettre en majuscule
     const lastNameFirstLetter = lastName.charAt(0).toUpperCase();
 
-    return `${firstNameShort}.${lastNameFirstLetter}`;
+    return `${formattedFirstName}.${lastNameFirstLetter}`;
   }
 }

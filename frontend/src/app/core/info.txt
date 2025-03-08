@@ -1,0 +1,2 @@
+Vous pouvez utiliser le dossier "core" pour les parties essentielles de l'application (services globaux, interceptors, guards..).
+Ce fichier pourra être supprimé dès l'ajout d'au moins d'un sous dossier du "core".
